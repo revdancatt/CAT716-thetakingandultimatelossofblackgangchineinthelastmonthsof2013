@@ -81,6 +81,7 @@ character = {
       }
     }
     
+    document.title = 'dead, ' + lifespan;
     $('#status').html(character.current.name + ' has died<br />They lived for ' + lifespan + '<br />');
     $('#status').append($('<a>').attr('href', '#').html('Play again').bind('click', function() { window.location.reload() }));
     $('#status').fadeIn('slow');
