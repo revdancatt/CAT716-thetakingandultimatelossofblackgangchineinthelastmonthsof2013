@@ -2,3 +2,16 @@ body {
   margin: 0;
   padding: 0;
 }
+
+#nojs {
+  display: none;
+}
+
+.no-js #nojs {
+  display: block;
+}
+
+.no-js #content {
+  display: none;
+}
+
