@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Georgia, serif;
+  background: #EEE;
 }
 
 #nojs {
@@ -15,3 +17,28 @@ body {
   display: none;
 }
 
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  min-height: 100%;
+}
+
+.container header h1 {
+  background: black;
+  margin-top: 0;
+  color: white;
+  padding: 0 6px 6px 6px;  
+}
+
+.container article {
+  padding: 0 6px;
+}
+.container footer {
+  font-size: 0.8em;
+  background: #666;
+  color: white;
+  padding: 6px;
+  margin-top: 2em;
+}
