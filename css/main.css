@@ -32,7 +32,7 @@ body {
   padding: 0 6px 6px 6px;  
 }
 
-.container article {
+.container .main {
   padding: 0 6px;
 }
 .container footer {
@@ -41,4 +41,16 @@ body {
   color: white;
   padding: 6px;
   margin-top: 2em;
+}
+
+#status {
+  display: none;
+}
+
+#characterCreationForm {
+  display: none;
+}
+
+#newCharacter input {
+  width: 300px;
 }

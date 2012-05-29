@@ -7,6 +7,12 @@ utils = {
     } catch(er) {
       // ignore
     }
+  },
+  
+  rollDie: function(sides) {
+    
+    return Math.ceil(Math.random()*sides);
+    
   }
 
 }
