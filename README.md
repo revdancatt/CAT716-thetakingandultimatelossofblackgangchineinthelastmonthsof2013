@@ -22,19 +22,19 @@ http://revdancatt.github.com/thetakingandultimatelossofblackgangchineinthelastmo
 Next actions list
 =================
 
-# store the current character in local storage, so you can leave the page and come back
-# store the most recent 50 characters in browser db, and display them by reverse date and longest surviving
-# add first aid kits
-# make the character use the first aid kit to stop bleeding
-# add the map
-# move the player from current location to destination
-# character creation
+- store the current character in local storage, so you can leave the page and come back
+- store the most recent 50 characters in browser db, and display them by reverse date and longest surviving
+- add first aid kits
+- make the character use the first aid kit to stop bleeding
+- add the map
+- move the player from current location to destination
+- character creation
 
 
 Just added
 ==========
 
-# zombie attacks
-# bleeding to death
-# time stamps on status updates
-# display of health over on the right
+- zombie attacks
+- bleeding to death
+- time stamps on status updates
+- display of health over on the right
