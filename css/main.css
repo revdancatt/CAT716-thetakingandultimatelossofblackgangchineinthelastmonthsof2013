@@ -9,6 +9,10 @@ body {
   display: none;
 }
 
+#about {
+  margin-bottom: 2em;
+}
+
 .no-js #nojs {
   display: block;
 }
@@ -43,8 +47,33 @@ body {
   margin-top: 2em;
 }
 
+.holder {
+  overflow: auto;
+  clear: both;
+}
+.left,
+.right {
+  width: 50%;
+  float: left;
+}
+
+#oldStatus ul,
+#details ul {
+  font-family: monospace;
+  padding: 0;
+  margin: 0;
+}
+
+#oldStatus ul li,
+#details ul li {
+  list-style: none;  
+}
+
 #status {
   display: none;
+  font-family: monospace;
+  padding: 0;
+  margin: 0;
 }
 
 #characterCreationForm {
