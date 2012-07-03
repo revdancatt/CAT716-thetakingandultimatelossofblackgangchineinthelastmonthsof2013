@@ -10,7 +10,7 @@ character = {
     bleeding: 0,
     injured: 0,
     infected: 0,
-    chanceOfAttack: 1,
+    chanceOfAttack: 1
   },
   startDateTime: new Date(2013, 9, 1, 8, 0, 0),
   
@@ -36,12 +36,12 @@ character = {
     $('#characterCreationForm').fadeIn('fast');
     
     //  make sure the form doesn't do anything when we submit it
-    $('#newCharacter').bind('submit', function() { 
+    $('#newCharacter').bind('submit', function() {
 
       character.current.name = $('#char_name').val();
       character.current.born = Math.floor(+new Date/1000);
       character.current.lastUpdate = Math.floor(+new Date/1000);
-      character.current.actions.push({action: 'woke up', tally: 0, timestamp: character.current.born});
+      character.current.actions.push({action: $('#char_name').val() + ' woke up', tally: 0, timestamp: character.current.born});
       character.current.health = 100;
       character.current.bleeding = 0;
       character.current.injured = 0;
@@ -49,9 +49,16 @@ character = {
       character.current.chanceOfAttack = 1;
       
       character.save();
-      $('#characterCreationForm').fadeOut('fast', function() { character.tick() });
+      $('#characterCreationForm').fadeOut('fast', function() { character.tick(); });
+      $('.gamescreen').fadeIn('slow', function() {
+        map.reset();
+      });
+      $('#content header').slideUp();
       return false;
     });
+
+    //  set the focus to the name input form.
+    $('#char_name').focus();
     
   },
   
@@ -97,7 +104,7 @@ character = {
       
       //  Now do that many turns
       if (secSinceLastUpdate > 0) {
-        character.turns(secSinceLastUpdate)
+        character.turns(secSinceLastUpdate);
       }
       
 
@@ -105,6 +112,13 @@ character = {
       var niceTime = utils.HHMM(utils.magicTime(character.current.lastUpdate));
       var newStatus = niceTime + ' - ' + character.current.actions[0].action;
       
+
+      //  flash the background if we have been attacked
+      var showBlood = {'fought off a zombie attack': 1, 'scratched by a zombie': 1, 'bitten by a zombie': 1 };
+      if (character.current.actions[0].action in showBlood) {
+        $('#blood').stop(true, true).css({display: 'inline', opacity: 1}).fadeOut(333);
+      }
+
 
       //  Update the status and call the next tick
       $('#status').html(newStatus).fadeIn('slow', function() {
@@ -251,13 +265,19 @@ character = {
     var months = ["January", 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     
     var niceDate = utils.magicTime(character.current.lastUpdate);
-    fullDate = days[niceDate.getDay()] + ' ' + niceDate.getDate() + ' ' + months[niceDate.getMonth()] + ' ' + (niceDate.getYear() + 1900) + ' ' + niceDate.getHours() + ':';
     var minutes = niceDate.getMinutes();
+    var ampm = 'am';
+    var stndrdth = 'th';
     if (minutes < 10) minutes = '0' + minutes;
-    fullDate = fullDate + minutes;
+    if (niceDate.getHours() >= 12) ampm = 'pm';
+    if (niceDate.getDate() == 1 || niceDate.getDate() == 21 || niceDate.getDate() == 31) stndrdth = 'st';
+    if (niceDate.getDate() == 2 || niceDate.getDate() == 22) stndrdth = 'nd';
+    if (niceDate.getDate() == 3 || niceDate.getDate() == 23) stndrdth = 'rd';
+    fullDate = 'It\'s ' + niceDate.getHours() + ':' + minutes + ampm + ' on ' + days[niceDate.getDay()] + ' ' + niceDate.getDate() + '<sup>' + stndrdth + '</sup> ' + months[niceDate.getMonth()] + ', ' + (niceDate.getYear() + 1900);
+    //fullDate = fullDate + minutes;
     
-    $('#details ul').append($('<li>').html(fullDate));
-    $('#details ul').append($('<li>').html('name: <strong>' + character.current.name + '</strong>'));
+    $('.currentDateTime').html(fullDate);
+
     $('#details ul').append($('<li>').html('current location: Robin Hill Adventure Park and Gardens'));
     $('#details ul').append($('<li>').html('current destination: Blackgang Chine'));
     $('#details ul').append($('<li>').html('survied: ' + lifespan));

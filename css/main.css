@@ -1,8 +1,19 @@
-body {
+body, html {
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Georgia, serif;
-  background: #EEE;
+  background: #EFEFEF;
+}
+
+#blood {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #CC1100;
+  display: none;
 }
 
 #nojs {
@@ -22,44 +33,134 @@ body {
 }
 
 .container {
-  width: 940px;
+  width: 1024px;
   margin-left: auto;
   margin-right: auto;
   background: white;
   min-height: 100%;
+  position: relative;
 }
 
 .container header h1 {
   background: black;
-  margin-top: 0;
+  font-size: 3em;
+  margin: 0;
   color: white;
-  padding: 0 6px 6px 6px;  
+  padding: 6px 18px;
+  line-height: 1.1em;
 }
 
-.container .main {
-  padding: 0 6px;
-}
 .container footer {
   font-size: 0.8em;
   background: #666;
   color: white;
-  padding: 6px;
   margin-top: 2em;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.container footer div {
+  padding: 6px;
 }
 
 .holder {
   overflow: auto;
   clear: both;
 }
+
+.main {
+    color: #333;
+}
+
+
+#characterCreationForm {
+  display: none;
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+}
+
+
+.storyinto {
+  font-size: 1.8em;
+  line-height: 1.6em;
+}
+
+.storyinto input {
+  font-size: 1em;
+  background: #EEE;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  padding: 0 6px;
+  width: 290px;
+  border: 3px dashed #999;
+  text-align: center;
+}
+
+.wakeup {
+  width: 100%;
+  text-align: center;
+}
+
+.wakeup button {
+  font-size: 2em;
+  background: #EEE;
+  color: #666;
+  border: 0;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  padding: 0 24px;
+  margin-bottom: 3em;
+}
+
+#map {
+  width: 100%;
+  height: 140px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#mapcover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background: #CC1100;
+  opacity: 0.0;
+  -moz-opacity: 0.0;
+  filter:alpha(opacity=0);
+}
+
+.gamescreen {
+  display: none;
+  font-size: 1.4em;
+}
+
+.currentDateTime {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  margin-top: 0.5em;  
+  margin-bottom: 0.5em;
+}
+
 .left,
 .right {
-  width: 50%;
+  width: 500px;
+  margin-left: 6px;
+  margin-right: 6px;
   float: left;
 }
 
 #oldStatus ul,
 #details ul {
-  font-family: monospace;
   padding: 0;
   margin: 0;
 }
@@ -71,15 +172,8 @@ body {
 
 #status {
   display: none;
-  font-family: monospace;
   padding: 0;
   margin: 0;
 }
 
-#characterCreationForm {
-  display: none;
-}
 
-#newCharacter input {
-  width: 300px;
-}

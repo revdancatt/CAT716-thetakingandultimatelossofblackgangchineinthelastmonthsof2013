@@ -8,49 +8,82 @@
 </head>
 <body>
 
+  <div id="blood">
+  </div>
+
   <div id="nojs">
     Hello, you seem not to have javascript turned on, this game needs javascript to run, sorry.
   </div>
   
   <div id="content" class="container">
+
+    <div id="map">
+    </div>
+
+    <div id="mapcover">
+    </div>
+
     <header>
-      <h1>The taking and ultimate loss of Blackgang Chine in the last months of 2013</h1>
+      <h1 class="tk-ff-prater-serif-web main">The taking and ultimate loss of Blackgang Chine in the last months of 2013</h1>
     </header>
+
+
     <div class="main">
     
-      <div id="about">Read more about this "game" <a href="https://github.com/revdancatt/thetakingandultimatelossofblackgangchineinthelastmonthsof2013">over here</a></div>
 
-      <div id="characterCreationForm">
-        <h1>Create new character</h1>
-        <form id="newCharacter">
-          <label>Name</label>
-          <input type="text" id="char_name" name="char_name" placeholder="Enter your character's name" required>
-          <button>Save</button>
-        </form>
+      <div id="characterCreationForm">        
+
+        <div class="storyinto story">
+          <p>
+            This is the story &amp; ultimate demise of
+            <input form="newCharacter" type="text" id="char_name" name="char_name" placeholder="Your character's name" required class="story">
+            while holidaying on the Isle of Wight, UK.
+          </p>
+          <p>
+            The last thing they remember was entering the Time Machine cinema ride at Robin Hill Adventure Park &amp; Gardens in the early afternoon,
+            an explosion, and suddenly the air was blasted out of the room by a shreaking wall of energy.
+          </p>
+        </div>
+
+        <div class="wakeup">
+          <form id="newCharacter">
+            <button class="story">Wake up</button>
+          </form>
+        </div>
+
       </div>
 
+
       <div class="holder">
-        <div class="left">
-          <div id="oldStatus">
-            <ul>
-            </ul>
+        <div class="gamescreen">
+
+          <div class="currentDateTime">
           </div>
-          
-          <div id="status">
+
+          <div class="left">
+            <div id="oldStatus">
+              <ul>
+              </ul>
+            </div>
+            
+            <div id="status">
+            </div>
           </div>
-        </div>
-  
-        <div class="right">
-          <div id="details">
-            <ul>
-            </ul>
+    
+          <div class="right">
+            <div id="details">
+              <ul>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       
     </div>
     <footer>
-      &copy; Rev Dan Catt 2012
+      <div>
+        &copy; Rev Dan Catt 2012
+      </div>
     </footer>
   </div>
   
@@ -64,7 +97,11 @@
   <script src="js/utils.js?v=0.3"></script>
   <script src="js/control.js?v=0.3"></script>
   <script src="js/character.js?v=0.3"></script>
-  
+  <script src="js/map.js?v=03"></script>
+  <script src="https://github.com/modestmaps/modestmaps-js/raw/master/modestmaps.js"></script>
+  <script src="http://maps.stamen.com/js/tile.stamen.js"></script>
+  <script type="text/javascript" src="http://use.typekit.com/paj2fid.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>  
   
 </body>
 </html>
