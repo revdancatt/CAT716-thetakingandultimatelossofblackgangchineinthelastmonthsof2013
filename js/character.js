@@ -131,9 +131,9 @@ character = {
           setTimeout("character.tick()", 1000);
         }
 
-      })
+      });
       
-    })
+    });
 
   },
   
@@ -160,7 +160,7 @@ character = {
             action: 'bitten by a zombie',
             tally: 1,
             timestamp: Math.floor(+new Date/1000)-(t-i)
-          }
+          };
           character.current.injured+=5;
           character.current.bleeding+=5;
           character.current.infected++;
@@ -172,7 +172,7 @@ character = {
             action: 'scratched by a zombie',
             tally: 1,
             timestamp: Math.floor(+new Date/1000)-(t-i)
-          } 
+          } ;
           character.current.injured++;
           character.current.bleeding++;
           
@@ -184,7 +184,7 @@ character = {
             action: 'fought off a zombie attack',
             tally: 1,
             timestamp: Math.floor(+new Date/1000)-(t-i)
-          } 
+          } ;
           
         }
         
@@ -195,7 +195,7 @@ character = {
           action: 'still alive',
           tally: 1,
           timestamp: Math.floor(+new Date/1000)-(t-i)
-        }
+        };
         
         if (character.current.injured > 0) {
           newAction.action = 'injured';
@@ -214,7 +214,7 @@ character = {
       //  if the action is the same as the most recent action then just update the times
       //  on the most recent action
       if (newAction.action == character.current.actions[0].action) {
-        character.current.actions[0].tally++
+        character.current.actions[0].tally++;
         character.current.actions[0].timestamp = Math.floor(+new Date/1000)-(t-i);
       } else {
         character.current.actions.unshift(newAction);
@@ -235,14 +235,14 @@ character = {
   displayStatus: function() {
     
     $('#oldStatus ul').empty();
-    for (i in character.current.actions) {
-      if (i == 0) continue;
+    for (var i in character.current.actions) {
+      if (i === 0) continue;
       if (character.current.actions[i].action == 'still alive') continue;
       if (character.current.actions[i].action == 'injured') continue;
       if (character.current.actions[i].action == 'infected') continue;
       if (character.current.actions[i].action == 'bleeding') continue;
       var niceTime = utils.HHMM(utils.magicTime(character.current.actions[i].timestamp));
-      $('#oldStatus ul').prepend($('<li>').html(niceTime + ' - ' + character.current.actions[i].action));  
+      $('#oldStatus ul').prepend($('<li>').html(niceTime + ' - ' + character.current.actions[i].action));
     }
     
     $('#details ul').empty();
@@ -258,9 +258,11 @@ character = {
     
 
     var lifespan = character.current.lastUpdate - character.current.born;
+    var shortLifespan = utils.shortLifespan(lifespan);
+    document.title = shortLifespan;
     lifespan = utils.lifespan(lifespan);
 
-    var fullDate = ''
+    var fullDate = '';
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     var months = ["January", 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     

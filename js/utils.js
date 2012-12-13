@@ -5,7 +5,7 @@ utils = {
   log: function(msg) {
     
     try {
-      console.log(msg)
+      console.log(msg);
     } catch(er) {
       // ignore
     }
@@ -19,7 +19,7 @@ utils = {
 
   lifespan: function(duration) {
 
-    var rtnLifespan = ''
+    var rtnLifespan = '';
     
     //  remember time is speeded up, so we need to multiply by 6
     duration = duration * this.timeModifier;
@@ -46,8 +46,48 @@ utils = {
       //  see if we need to add the second on too
       if (seconds == 1) {
         rtnLifespan+=' 1 second';
-      } else if (seconds != 0) {
+      } else if (seconds !== 0) {
         rtnLifespan+= ' ' + seconds + ' seconds';
+      }
+    }
+
+    return rtnLifespan;
+
+  },
+  
+  shortLifespan: function(duration) {
+
+    var rtnLifespan = '';
+    
+    //  remember time is speeded up, so we need to multiply by 6
+    duration = duration * this.timeModifier;
+    
+    //  if they only lived 1 second (sad) then just display that
+    //  otherwise display total seconds unless we've moved into minutes
+    if (duration == 1) {
+      rtnLifespan = '0m 1s';
+    } else if (duration < 60) {
+      rtnLifespan = '0m ' + duration + 's';
+    } else {
+
+      //  ok we have to do minute stuff, so here we go, work out the minutes and seconds
+      var minutes = Math.floor(duration/60);
+      var seconds = duration - minutes * 60;
+      
+      //  pluralise it
+      if (minutes == 1) {
+        rtnLifespan = '1m';
+      } else {
+        rtnLifespan = minutes + 'm';
+      }
+      
+      //  see if we need to add the second on too
+      if (seconds == 1) {
+        rtnLifespan+=' 1s';
+      } else if (seconds !== 0) {
+        rtnLifespan+= ' ' + seconds + 's';
+      } else {
+        rtnLifespan+=' 0s';
       }
     }
 
