@@ -1,91 +1,60 @@
-body, html {
-  width: 100%;
+html {
   height: 100%;
+}
+
+body {
+  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
-  background: #EFEFEF;
+  background: #eee;
+  font-size: 1em;
 }
 
-#blood {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #CC1100;
-  display: none;
-}
-
-#nojs {
-  display: none;
-}
-
-#about {
-  margin-bottom: 2em;
-}
-
-.no-js #nojs {
-  display: block;
-}
-
-.no-js #content {
-  display: none;
-}
-
-.container {
+.biteme {
+  margin: 0;
+  border: 0;
+  padding: 0;
   width: 1024px;
   margin-left: auto;
   margin-right: auto;
-  background: white;
+  height: 100%;
   min-height: 100%;
-  position: relative;
 }
 
-.container header h1 {
-  background: black;
-  font-size: 3em;
+.biteme tr,
+.biteme td {
+  padding: 0;
   margin: 0;
-  color: white;
-  padding: 6px 18px;
-  line-height: 1.1em;
+  border: 0;
 }
 
-.container footer {
-  font-size: 0.8em;
-  background: #666;
-  color: white;
-  margin-top: 2em;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
+.gamescreen {
+  position: relative;
+  width: 1024px;
+  height: 600px;
+  background: white;
+  top: 50%;
+  margin: -300px auto auto auto;
+  -webkit-box-shadow:  0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow:  0px 0px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
-.container footer div {
-  padding: 6px;
+.gamescreen h1 {
+  margin-top: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+  text-align: center;
+  font-size: 3em;
+  line-height: 1em;
 }
-
-.holder {
-  overflow: auto;
-  clear: both;
-}
-
-.main {
-    color: #333;
-}
-
-
-#characterCreationForm {
-  display: none;
-  width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2em;
-}
-
 
 .storyinto {
   font-size: 1.8em;
   line-height: 1.6em;
+  margin-top: 1.5em;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .storyinto input {
@@ -114,49 +83,92 @@ body, html {
   -moz-border-radius: 12px;
   border-radius: 12px;
   padding: 0 24px;
-  margin-bottom: 3em;
+  margin-top: 0.5em;
+  cursor: pointer;
 }
 
-#map {
-  width: 100%;
-  height: 140px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
 
-#mapcover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 140px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  background: #CC1100;
-  opacity: 0.0;
-  -moz-opacity: 0.0;
-  filter:alpha(opacity=0);
-}
-
-.gamescreen {
+#page2 {
   display: none;
-  font-size: 1.4em;
+}
+
+/*  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #EFEFEF;
+}
+*/
+
+/*
+.nojs {
+  display: none;
+}
+
+.about {
+  margin-bottom: 2em;
+}
+
+.no-js #nojs {
+  display: block;
+}
+
+.no-js #content {
+  display: none;
+}
+
+
+
+.characterCreationForm {
+  display: block;
+}
+
+.storyinto {
+  font-size: 1.8em;
+  line-height: 1.6em;
+}
+
+.storyinto input {
+  font-size: 1em;
+  background: #EEE;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  padding: 0 6px;
+  width: 290px;
+  border: 3px dashed #999;
+  text-align: center;
+}
+
+
+
+.playarea {
+  display: none;
 }
 
 .currentDateTime {
   width: 100%;
   text-align: center;
   font-size: 2em;
-  margin-top: 0.5em;  
+  margin-top: 0;  
   margin-bottom: 0.5em;
 }
 
-.left,
-.right {
-  width: 500px;
+.left {
+  width: 700px;
   margin-left: 6px;
   margin-right: 6px;
   float: left;
+}
+
+.right {
+  width: 300px;
+  height: 600px;
+  margin-left: 6px;
+  margin-right: 6px;
+  float: left;
+  background-image: url(../imgs/map.png);
+  background-size: 100% 100%;
 }
 
 #oldStatus ul,
@@ -175,5 +187,5 @@ body, html {
   padding: 0;
   margin: 0;
 }
-
+*/
 

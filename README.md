@@ -1,5 +1,3 @@
-![Screen Shot](http://cattopus23.com/img/panel-CAT716.png)
-
 CAT716 The taking and ultimate loss of blackgang chine in the last months of 2013
 =================================================================================
 
@@ -14,9 +12,13 @@ The ultimate aim is two fold...
 
 Number 1 is pretty much non-existant at the moment, but we'll get there.
 
-You can "play it" here:
 
-+ Running: http://revdancatt.github.com/CAT716-thetakingandultimatelossofblackgangchineinthelastmonthsof2013
+You can "play it" here:
+=======================
+
+Whoa, just moving things around, bit broken at the moment.
+
+~~http://revdancatt.github.com/CAT716-thetakingandultimatelossofblackgangchineinthelastmonthsof2013~~
 
 
 Next actions list
