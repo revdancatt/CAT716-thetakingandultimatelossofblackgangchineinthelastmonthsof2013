@@ -1,7 +1,7 @@
 ![Screen Shot](http://cattopus23.com/img/panel-CAT716.png)
 
-The taking and ultimate loss of blackgang chine in the last months of 2013
-==========================================================================
+CAT716 The taking and ultimate loss of blackgang chine in the last months of 2013
+=================================================================================
 
 A non-interactive Zombie survival horror game on the Isle of Wight.
 
